@@ -22,3 +22,7 @@ Note: `$ATOM_PROJECT_PATH` is applied automatically by this package. And you can
 ## Automatically loading
 
 If you want to load when window opens, You can use atom [auto-run](https://atom.io/packages/auto-run) packages with this.
+
+## License
+
+MIT License.
