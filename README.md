@@ -14,3 +14,5 @@ You should create `.atomenv.json` in the directory that is an atom project.
     }
 }
 ```
+
+Runs `atomenv:load` command.

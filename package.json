@@ -5,7 +5,7 @@
   "description": "Loads environment variables from .atomenv.json",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "atomenv:reload"
+    "atom-workspace": "atomenv:load"
   },
   "repository": {
     "type": "git",

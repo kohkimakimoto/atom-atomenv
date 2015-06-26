@@ -1,29 +1,17 @@
 fs = require('fs')
 
-AtomenvView = require './atomenv-view'
 {CompositeDisposable} = require 'atom'
 
-module.exports = Atomenv =
-  atomenvView: null
-  modalPanel: null
-  subscriptions: null
-
-  activate: (state) ->
+module.exports =
+  activate: ->
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace', 'atomenv:reload': => @reload()
-    @subscriptions.add(atom.packages.onDidActivateInitialPackages => @start())
+    @subscriptions.add(atom.commands.add 'atom-workspace', 'atomenv:load': => @load())
 
   deactivate: ->
     @subscriptions.dispose()
     @subscriptions = null
 
-  serialize: ->
-    atomenvViewState: @atomenvView.serialize()
-
-  start: ->
-    @reload()
-
-  reload: ->
+  load: ->
     filepath = atom.project.getPaths()[0] + "/.atomenv.json"
 
     projectPath = atom.project.getPaths()[0]
