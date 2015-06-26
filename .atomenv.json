@@ -1,0 +1,5 @@
+{
+    "env": {
+        "ATOMENV_TEST": "hogehogehoge"
+    }
+}
