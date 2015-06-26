@@ -1,0 +1,22 @@
+{
+  "name": "atomenv",
+  "main": "./lib/atomenv",
+  "version": "0.1.0",
+  "description": "Loads environment variables from .atomenv.json",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "atomenv:reload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kohkimakimoto/atom-atomenv"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+  }
+}
