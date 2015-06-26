@@ -41,7 +41,6 @@ module.exports = Atomenv =
         matches = v.match(/(\$[a-zA-Z0-9\._-]+)/g)
         for i, mv of matches
             envkey = mv.replace(/\$|\{|\}/g, "")
-            console.log(envkey + " " + mv)
 
             v = v.replace(mv, env[envkey])
 
