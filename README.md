@@ -1,6 +1,6 @@
 # atomenv package
 
-Loads environment variables from .atomenv.json
+Loads environment variables from `.atomenv.json`
 
 ## Usage
 
