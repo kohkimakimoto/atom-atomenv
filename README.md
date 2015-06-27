@@ -4,7 +4,7 @@ Loads environment variables from `.atomenv.json`
 
 ## Usage
 
-You should create `.atomenv.json` in the directory that is an atom project.
+Create `.atomenv.json` in the directory that is an atom project.
 
 ```json
 {
@@ -15,7 +15,15 @@ You should create `.atomenv.json` in the directory that is an atom project.
 }
 ```
 
-Runs `atomenv:load` command.
+or `.atomenv.cson`
+
+```cson
+env:
+  GOPATH: "$ATOM_PROJECT_PATH/_vendor:$HOME"
+  FOO: "foooobaaaaa"
+```
+
+Run `atomenv:load` command.
 
 Note: `$ATOM_PROJECT_PATH` is applied automatically by this package. And you can refer to other environment variables by usign `$` prefix. ex) `$HOME`.
 

@@ -1,0 +1,3 @@
+env:
+  atomenv_test2: "hogehogehoge:$HOME"
+  atomenv_test3: "hogehogehoge:$ATOM_PROJECT_PATH"

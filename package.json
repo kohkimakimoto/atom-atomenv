@@ -16,5 +16,8 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "readmeFilename": "README.md",
-  "dependencies": {}
+  "dependencies": {
+    "cson": "^3.0.1",
+    "lodash": "^3.9.3"
+  }
 }

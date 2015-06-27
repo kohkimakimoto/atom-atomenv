@@ -1,4 +1,6 @@
-fs = require('fs')
+fs = require 'fs'
+CSON = require 'cson'
+_ = require 'lodash'
 
 {CompositeDisposable} = require 'atom'
 
@@ -12,18 +14,21 @@ module.exports =
     @subscriptions = null
 
   load: ->
-    filepath = atom.project.getPaths()[0] + "/.atomenv.json"
+    filepathJSON = atom.project.getPaths()[0] + "/.atomenv.json"
+    filepathCSON = atom.project.getPaths()[0] + "/.atomenv.cson"
 
     projectPath = atom.project.getPaths()[0]
-
-    env = process.env
+    env = _.clone(process.env)
     env["ATOM_PROJECT_PATH"] = projectPath
 
-    if !fs.existsSync(filepath)
-      console.log('Not found ' + filepath)
-      return
+    conf = {}
+    if fs.existsSync(filepathJSON)
+      _.merge(conf, CSON.parseFile(filepathJSON))
+    if fs.existsSync(filepathCSON)
+      _.merge(conf, CSON.parseFile(filepathCSON))
 
-    conf = require(filepath)
+    # console.log(conf)
+
     if conf.hasOwnProperty("env")
       for k,v of conf.env
         matches = v.match(/(\$[a-zA-Z0-9\._-]+)/g)
